@@ -19,6 +19,14 @@ let herbs = false;
 let seaweedStart = 0;
 let herbStart = 0;
 
+/*
+
+FIGURE OUT TREEEEES
+dropdown for tree type to set how long it lasts
+
+
+*/
+
 //start a 1 minute loop
 const oneMinute = setInterval(function() {
     //add 1 to time every 1 minutes
