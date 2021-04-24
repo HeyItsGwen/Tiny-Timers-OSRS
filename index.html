@@ -12,18 +12,19 @@
 </head>
 
 <body>
-  <header>
-    <h1 class='d-flex justify-content-center'>Tiny Timers</h1>
+  <header class='d-flex flex-column align-items-center'>
+    <h1>Tiny Timers</h1>
+    <p>Hit go to start, hit go to restart an active timer, or refresh to stop all timers c:</p>
   </header>
 
   <main class='d-flex justify-content-center'>
     <div class='seaweed d-flex flex-column align-items-center'>
-      <button type="button" class="btn btn-outline-primary">Go</button>
+      <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
       <img src='./images/seaweed.png' alt='Giant Seaweed'></img>
       <p class='seaweedPercent'>0%</p>
     </div>
     <div class='herbs d-flex flex-column align-items-center'>
-      <button type="button" class="btn btn-outline-primary">Go</button>
+      <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
       <img src='./images/herb.png' alt='A Herb'></img>
       <p class='herbPercent'>0%</p>
     </div>

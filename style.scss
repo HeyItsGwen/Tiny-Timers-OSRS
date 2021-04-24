@@ -3,27 +3,22 @@ body {
   color: rgb(226, 226, 226);
 }
 
-.fa-heart {
-  color: red;
-}
-
-a.gwen {
-  color: white;
-}
-a.bootstrap {
-  color: #7952b3;
+header {
+  p {
+    font-size: 0.9em;
+  }
 }
 
 main {
   margin-top: 25px;
 
   div {
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     color: white;
 
     img {
-      max-width: 40px;
+      max-width: 30px;
     }
 
     button {
@@ -52,4 +47,15 @@ main {
 footer {
   margin-top: 30px;
   font-size: 0.8em;
+
+  .fa-heart {
+    color: red;
+  }
+  
+  a.gwen {
+    color: white;
+  }
+  a.bootstrap {
+    color: #7952b3;
+  }
 }
