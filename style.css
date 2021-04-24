@@ -14,7 +14,7 @@ main {
 main div {
   margin: 5px;
   border-radius: 5px;
-  color: white;
+  color: black;
 }
 
 main div img {
@@ -26,12 +26,12 @@ main div button {
   width: 100%;
   margin-bottom: 10px;
   padding: 0 !important;
-  color: #fdfdfd !important;
+  color: #333333 !important;
   border: 1px solid white !important;
 }
 
 main div button:hover {
-  background-color: #68c8ff !important;
+  background-color: #4ffa00 !important;
   color: black !important;
 }
 
@@ -40,7 +40,7 @@ main div p {
 }
 
 main .seaweed, main .herbs {
-  background-color: #da0000;
+  background-color: red;
   padding: 5px;
 }
 
@@ -59,5 +59,9 @@ footer a.gwen {
 
 footer a.bootstrap {
   color: #7952b3;
+}
+
+header a {
+  color: #c4da00;
 }
 /*# sourceMappingURL=style.css.map */
