@@ -15,6 +15,9 @@
   <header class='d-flex flex-column align-items-center'>
     <h1>Tiny Timers</h1>
     <p>Hit go to start, hit go to restart an active timer, or refresh to stop all timers c:</p>
+  </header>
+
+  <main class='d-flex flex-column align-items-center'>
     <div class='checkboxes d-flex justify-content-center' id='checkboxes'>
       <input type="checkbox" id='seaweedBox' name='seaweedBox' value='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv);' checked>
       <label for='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv);'>Seaweed</label>
@@ -23,23 +26,22 @@
       <input type="checkbox" id='herbBox' name='herbBox' value='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);' checked>
       <label for='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);'>Herbs</label>
     </div>
-  </header>
-
-  <main class='d-flex justify-content-center'>
-    <div class='seaweed d-flex flex-column align-items-center' id='seaweed'>
-      <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
-      <img src='./images/seaweed.png' alt='Giant Seaweed'></img>
-      <p id='seaweedPercent'>0%</p>
-    </div>
-    <div class='birds d-flex flex-column align-items-center' id='birds'>
-      <button type="button" class="btn btn-outline-primary" id='birdButton'>Go</button>
-      <img src='./images/birdhouse.png' alt='A Birdhouse'></img>
-      <p id='birdPercent'>0%</p>
-    </div>
-    <div class='herbs d-flex flex-column align-items-center' id='herbs'>
-      <button type="button" class="btn btn-outline-primary" id='herbButton'>Go</button>
-      <img src='./images/herb.png' alt='A Herb'></img>
-      <p id='herbPercent'>0%</p>
+    <div class='d-flex flex-row'>
+      <div class='seaweed d-flex flex-column align-items-center' id='seaweed'>
+        <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
+        <img src='./images/seaweed.png' alt='Giant Seaweed'></img>
+        <p id='seaweedPercent'>0%</p>
+      </div>
+      <div class='birds d-flex flex-column align-items-center' id='birds'>
+        <button type="button" class="btn btn-outline-primary" id='birdButton'>Go</button>
+        <img src='./images/birdhouse.png' alt='A Birdhouse'></img>
+        <p id='birdPercent'>0%</p>
+      </div>
+      <div class='herbs d-flex flex-column align-items-center' id='herbs'>
+        <button type="button" class="btn btn-outline-primary" id='herbButton'>Go</button>
+        <img src='./images/herb.png' alt='A Herb'></img>
+        <p id='herbPercent'>0%</p>
+      </div>
     </div>
   </main>
 

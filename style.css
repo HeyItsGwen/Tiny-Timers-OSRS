@@ -7,16 +7,21 @@ header p {
   font-size: 0.9em;
 }
 
-header input {
+main {
+  margin-top: 25px;
+}
+
+main .checkboxes {
+  color: white;
+  margin-bottom: 25px;
+}
+
+main .checkboxes input {
   margin: 0 6px;
 }
 
-header label {
+main .checkboxes label {
   margin-bottom: 2px;
-}
-
-main {
-  margin-top: 25px;
 }
 
 main div {
