@@ -7,6 +7,14 @@ header p {
   font-size: 0.9em;
 }
 
+header input {
+  margin: 0 6px;
+}
+
+header label {
+  margin-bottom: 2px;
+}
+
 main {
   margin-top: 25px;
 }
@@ -39,9 +47,13 @@ main div p {
   margin: 0;
 }
 
-main .seaweed, main .herbs {
+main .seaweed, main .herbs, main .birds {
   background-color: red;
   padding: 5px;
+}
+
+main .seaweed p, main .herbs p {
+  padding-top: 4px;
 }
 
 footer {
