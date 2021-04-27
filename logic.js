@@ -234,11 +234,9 @@ function checkboxStatus(checkbox,div,dropdown){
             if(checkbox === treeCheckbox){
                 treeDropdownDiv.classList.remove('d-none');
                 treeDropdownDiv.classList.add('d-flex');
-                console.log('has dropdown')
             } else if(checkbox === fruitTreeCheckbox){
                 fruitTreeDropdownDiv.classList.remove('d-none');
                 fruitTreeDropdownDiv.classList.add('d-flex');
-                console.log('has dropdown')
             }
         }
     } else if(!checkbox.checked) {
@@ -248,17 +246,16 @@ function checkboxStatus(checkbox,div,dropdown){
             if(checkbox === treeCheckbox){
                 treeDropdownDiv.classList.remove('d-flex');
                 treeDropdownDiv.classList.add('d-none');
-                console.log('has dropdown off')
             } else if(checkbox === fruitTreeCheckbox){
                 fruitTreeDropdownDiv.classList.remove('d-flex');
                 fruitTreeDropdownDiv.classList.add('d-none');
-                console.log('has dropdown off')
             }
         }
     }
 }
 //function for changing the inner text of the dropdown button 
 function treeDropdownSelect(tree){}
+function fruitTreeDroodownSelect(tree){}
 //onpageload function to check the previously set status of checkboxes and hide timers accordingly
 function checkboxCheck(){
     checkboxStatus(seaweedCheckbox,seaweedDiv,false);
