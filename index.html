@@ -19,28 +19,73 @@
 
   <main class='d-flex flex-column align-items-center'>
     <div class='checkboxes d-flex justify-content-center' id='checkboxes'>
-      <input type="checkbox" id='seaweedBox' name='seaweedBox' value='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv);' checked>
-      <label for='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv);'>Seaweed</label>
-      <input type="checkbox" id='birdBox' name='birdBox' value='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv);' checked>
+      <input type="checkbox" id='seaweedBox' name='seaweedBox' value='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv,false);' checked>
+      <label for='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv, false);'>Seaweed</label>
+      <input type="checkbox" id='birdBox' name='birdBox' value='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv,false);' checked>
       <label for='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv);'>Birdhouses</label>
-      <input type="checkbox" id='herbBox' name='herbBox' value='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);' checked>
+      <input type="checkbox" id='herbBox' name='herbBox' value='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv,false);' checked>
       <label for='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);'>Herbs</label>
+      <input type="checkbox" id='treeBox' name='treeBox' value='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);' checked>
+      <label for='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);'>Trees</label>
+      <input type="checkbox" id='fruitTreeBox' name='fruitTreeBox' value='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);' checked>
+      <label for='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);'>Fruit Trees</label>
     </div>
-    <div class='d-flex flex-row'>
-      <div class='seaweed d-flex flex-column align-items-center' id='seaweed'>
+    <div class='d-flex flex-row timers'>
+      <div class='seaweed d-flex flex-column align-items-center startButton' id='seaweed'>
         <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
         <img src='./images/seaweed.png' alt='Giant Seaweed'></img>
         <p id='seaweedPercent'>0%</p>
       </div>
-      <div class='birds d-flex flex-column align-items-center' id='birds'>
+      <div class='birds d-flex flex-column align-items-center startButton' id='birds'>
         <button type="button" class="btn btn-outline-primary" id='birdButton'>Go</button>
         <img src='./images/birdhouse.png' alt='A Birdhouse'></img>
         <p id='birdPercent'>0%</p>
       </div>
-      <div class='herbs d-flex flex-column align-items-center' id='herbs'>
+      <div class='herbs d-flex flex-column align-items-center startButton' id='herbs'>
         <button type="button" class="btn btn-outline-primary" id='herbButton'>Go</button>
         <img src='./images/herb.png' alt='A Herb'></img>
         <p id='herbPercent'>0%</p>
+      </div>
+      <div class='trees d-flex flex-column align-items-center startButton' id='trees'>
+        <button type="button" class="btn btn-outline-primary" id='treeButton'>Go</button>
+        <img src='./images/tree.png' alt='A Tree'></img>
+        <p id='treePercent'>0%</p>
+      </div>
+      <div class='fruitTrees d-flex flex-column align-items-center startButton' id='fruitTrees'>
+        <button type="button" class="btn btn-outline-primary" id='fruitTreeButton'>Go</button>
+        <img src='./images/fruitTree.png' alt='A Fruit Tree'></img>
+        <p id='fruitTreePercent'>0%</p>
+      </div>
+    </div>
+    <div class='d-flex flex-row'>
+      <div class='d-flex justify-content-center' id='treeDropdownDiv'>
+        <!-- title and dropdown show/hide with tree timer-->
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="treeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Oak
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#" onclick='treeDropdownSelect(willow)'>Willow</a>
+          <a class="dropdown-item" href="#" onclick='treeDropdownSelect(maple)'>Maple</a>
+          <a class="dropdown-item" href="#" onclick='treeDropdownSelect(yew)'>Yew</a>
+          <a class="dropdown-item" href="#" onclick='treeDropdownSelect(magic)'>Magic</a>
+          <a class="dropdown-item" href="#" onclick='treeDropdownSelect(willow)'>Redwood</a>
+        </div>
+      </div>
+      <div class='d-flex justify-content-center' id='fruitTreeDropdownDiv'>
+        <!-- title and dropdown show/hide with tree timer-->
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="fruitTreeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Apple
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Banana</a>
+          <a class="dropdown-item" href="#">Orange</a>
+          <a class="dropdown-item" href="#">Curry</a>
+          <a class="dropdown-item" href="#">Piineapple</a>
+          <a class="dropdown-item" href="#">Papaya</a>
+          <a class="dropdown-item" href="#">Palm</a>
+          <a class="dropdown-item" href="#">Dragonfruit</a>
+        </div>
+      </div>
       </div>
     </div>
   </main>

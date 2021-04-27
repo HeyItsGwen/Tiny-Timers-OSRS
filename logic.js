@@ -2,6 +2,12 @@
 let seaweedDiv = document.getElementById('seaweed');
 let herbDiv = document.getElementById('herbs');
 let birdDiv = document.getElementById('birds');
+let treeDiv = document.getElementById('trees');
+let fruitTreeDiv = document.getElementById('fruitTrees');
+
+//dropdown divs
+let treeDropdownDiv = document.getElementById('treeDropdownDiv');
+let fruitTreeDropdownDiv = document.getElementById('fruitTreeDropdownDiv')
 
 //get the start buttons from the dom
 let seaweedButton = document.getElementById('seaweedButton');
@@ -17,6 +23,8 @@ let birdPercentage = document.getElementById('birdPercent');
 let seaweedCheckbox = document.getElementById('seaweedBox');
 let herbCheckbox = document.getElementById('herbBox');
 let birdCheckbox = document.getElementById('birdBox');
+let treeCheckbox = document.getElementById('treeBox');
+let fruitTreeCheckbox = document.getElementById('fruitTreeBox');
 
 //set variables for global time, and check if buttons have been pressed (false)
 let time = 0;
@@ -33,8 +41,6 @@ let birdStart = 0;
 
 FIGURE OUT TREEEEES
 dropdown for tree type to set how long it lasts
-
-ALSO BIRDS :D
 
 */
 
@@ -219,18 +225,45 @@ birdButton.addEventListener('click',startBirds);
 //making the timers appear/disappear
 //showhide function with checkbox div arg
 //html onclick on checkboxes calls showhide function and inputs the div according to the checkbox
-function checkboxStatus(checkbox,div){
+//checkbox id, timer div id, dropdown true/false
+function checkboxStatus(checkbox,div,dropdown){
     if(checkbox.checked){
         div.classList.remove('d-none');
         div.classList.add('d-flex');
+        if(dropdown){
+            if(checkbox === treeCheckbox){
+                treeDropdownDiv.classList.remove('d-none');
+                treeDropdownDiv.classList.add('d-flex');
+                console.log('has dropdown')
+            } else if(checkbox === fruitTreeCheckbox){
+                fruitTreeDropdownDiv.classList.remove('d-none');
+                fruitTreeDropdownDiv.classList.add('d-flex');
+                console.log('has dropdown')
+            }
+        }
     } else if(!checkbox.checked) {
         div.classList.remove('d-flex');
         div.classList.add('d-none');
+        if(dropdown){
+            if(checkbox === treeCheckbox){
+                treeDropdownDiv.classList.remove('d-flex');
+                treeDropdownDiv.classList.add('d-none');
+                console.log('has dropdown off')
+            } else if(checkbox === fruitTreeCheckbox){
+                fruitTreeDropdownDiv.classList.remove('d-flex');
+                fruitTreeDropdownDiv.classList.add('d-none');
+                console.log('has dropdown off')
+            }
+        }
     }
 }
+//function for changing the inner text of the dropdown button 
+function treeDropdownSelect(tree){}
 //onpageload function to check the previously set status of checkboxes and hide timers accordingly
 function checkboxCheck(){
-    checkboxStatus(seaweedCheckbox,seaweedDiv);
-    checkboxStatus(birdCheckbox,birdDiv);
-    checkboxStatus(herbCheckbox,herbDiv);
+    checkboxStatus(seaweedCheckbox,seaweedDiv,false);
+    checkboxStatus(birdCheckbox,birdDiv,false);
+    checkboxStatus(herbCheckbox,herbDiv,false);
+    checkboxStatus(treeCheckbox,treeDiv,true);
+    checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);
 }
