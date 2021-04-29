@@ -24,6 +24,10 @@ main .checkboxes label {
   margin-bottom: 2px;
 }
 
+main #hoverLabelP {
+  color: white;
+}
+
 main div {
   margin: 5px;
   border-radius: 5px;

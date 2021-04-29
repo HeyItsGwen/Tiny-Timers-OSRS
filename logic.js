@@ -1,3 +1,6 @@
+//get the hover label dom element
+let hoverLabel = document.getElementById('hoverLabelP')
+
 //get the timer divs
 let seaweedDiv = document.getElementById('seaweed');
 let herbDiv = document.getElementById('herbs');
@@ -59,16 +62,8 @@ let treeTimes =[[[1],[8],[20],[40],[60],[80],[100],[120],[140],[160],[180],[190]
 //variable storing the selected fruit tree
 let selectedTree = 0;
 let selectedFruitTree = 0;
-/*
 
-FIGURE OUT TREEEEES
-dropdown for tree type to set how long it lasts
-
-2nd js file for tree/fruit tree times array?
-
-*/
-
-//start a 1 minute loop
+//1 minute loop
 const oneMinute = setInterval(function() {
     //add 1 to time every 1 minutes
     time += 1;
@@ -308,6 +303,13 @@ const oneMinute = setInterval(function() {
         }
     }
 }, 600);
+
+function clearHoverLabel() {hoverLabel.innerHTML = '-'};
+document.querySelectorAll('.hoverDiv').forEach(divs => {divs.addEventListener('mouseleave',clearHoverLabel)});
+
+function changeHoverLabel(labelText){
+    hoverLabel.innerHTML = labelText;
+}
 
 function startSeaweed() {
     seaweed = true;

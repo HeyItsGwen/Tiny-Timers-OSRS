@@ -30,28 +30,31 @@
       <input type="checkbox" id='fruitTreeBox' name='fruitTreeBox' value='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);' checked>
       <label for='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);'>Fruit Trees</label>
     </div>
+    <div id='hoverLabelDiv'>
+      <p id='hoverLabelP'>444</p>
+    </div>
     <div class='d-flex flex-row timers'>
-      <div class='seaweed d-flex flex-column align-items-center startButton' id='seaweed'>
+      <div class='seaweed hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Seaweed")' id='seaweed'>
         <button type="button" class="btn btn-outline-primary" id='seaweedButton'>Go</button>
         <img src='./images/seaweed.png' alt='Giant Seaweed'></img>
         <p id='seaweedPercent'>0%</p>
       </div>
-      <div class='birds d-flex flex-column align-items-center startButton' id='birds'>
+      <div class='birds hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Bird Houses")' id='birds'>
         <button type="button" class="btn btn-outline-primary" id='birdButton'>Go</button>
         <img src='./images/birdhouse.png' alt='A Birdhouse'></img>
         <p id='birdPercent'>0%</p>
       </div>
-      <div class='herbs d-flex flex-column align-items-center startButton' id='herbs'>
+      <div class='herbs hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Herbs")' id='herbs'>
         <button type="button" class="btn btn-outline-primary" id='herbButton'>Go</button>
         <img src='./images/herb.png' alt='A Herb'></img>
         <p id='herbPercent'>0%</p>
       </div>
-      <div class='trees d-flex flex-column align-items-center startButton' id='trees'>
+      <div class='trees hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Trees")' id='trees'>
         <button type="button" class="btn btn-outline-primary" id='treeButton'>Go</button>
         <img src='./images/tree.png' alt='A Tree'></img>
         <p id='treePercent'>0%</p>
       </div>
-      <div class='fruitTrees d-flex flex-column align-items-center startButton' id='fruitTrees'>
+      <div class='fruitTrees hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Fruit Trees")' id='fruitTrees'>
         <button type="button" class="btn btn-outline-primary" id='fruitTreeButton'>Go</button>
         <img src='./images/fruitTree.png' alt='A Fruit Tree'></img>
         <p id='fruitTreePercent'>0%</p>
