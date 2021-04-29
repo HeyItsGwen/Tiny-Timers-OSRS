@@ -49,21 +49,15 @@ let birdStart = 0;
 let treeStart = 0;
 let fruitTreeStart = 0;
 
-//array to store tree growth times
-let treeTimes =[[],
-                [],
-                [],
-                [],
-                [],
-                []];
+//array to store different tree growth times
+//[0]oak,[1]willow,[2]maple,[3]yew,[4]magic
+let treeTimes =[[[1],[8],[20],[40],[60],[80],[100],[120],[140],[160],[180],[190],[200]],
+                [[1],[14],[28],[56],[84],[112],[140],[168],[196],[224],[252],[266],[280]],
+                [[1],[16],[32],[64],[96],[128],[160],[192],[224],[256],[288],[304],[320]],
+                [[1],[20],[40],[80],[120],[160],[200],[240],[280],[320],[360],[380],[400]],
+                [[1],[24],[48],[96],[144],[192],[240],[288],[336],[384],[432],[456],[480]]];
+//variable storing the selected fruit tree
 let selectedTree = 0;
-
-let fruitTreeTimes=[[],
-                    [],
-                    [],
-                    [],
-                    [],
-                    []];
 let selectedFruitTree = 0;
 /*
 
@@ -219,45 +213,98 @@ const oneMinute = setInterval(function() {
             birdDiv.style.backgroundColor='#50fc08';
         }
     }
+    //trees check a variable that stores the selected tree, and then use that variable to access an array location to get time intervals
+    //if time === treeArray[selectedTreeVariable][timeInterval]
     if(trees){
-        if(time === treeTimes[selectedTree[0]]){
-
+        if(time === treeTimes[selectedTree][0]){
+            treePercentage.innerHTML='1%';
         }
-        if(time === treeTimes[selectedTree[1]]){
-
+        if(time === treeTimes[selectedTree][1]){
+            treePercentage.innerHTML='5%';
         }
-        if(time === treeTimes[selectedTree[2]]){
-
+        if(time === treeTimes[selectedTree][2]){
+            treePercentage.innerHTML='10%';
         }
-        if(time === treeTimes[selectedTree[3]]){
-
+        if(time === treeTimes[selectedTree][3]){
+            treeDiv.style.backgroundColor='#ff4100';
+            treePercentage.innerHTML='20%';
         }
-        if(time === treeTimes[selectedTree[4]]){
-
+        if(time === treeTimes[selectedTree][4]){
+            treePercentage.innerHTML='30%';
         }
-        if(time === treeTimes[selectedTree[5]]){
-
+        if(time === treeTimes[selectedTree][5]){
+            treeDiv.style.backgroundColor='#ffba00';
+            treePercentage.innerHTML='40%';
         }
-        if(time === treeTimes[selectedTree[6]]){
-
+        if(time === treeTimes[selectedTree][6]){
+            treePercentage.innerHTML='50%';
         }
-        if(time === treeTimes[selectedTree[7]]){
-
+        if(time === treeTimes[selectedTree][7]){
+            treeDiv.style.backgroundColor='#ffe800';
+            treePercentage.innerHTML='60%';
         }
-        if(time === treeTimes[selectedTree[8]]){
-
+        if(time === treeTimes[selectedTree][8]){
+            treePercentage.innerHTML='70%';
         }
-        if(time === treeTimes[selectedTree[9]]){
-
+        if(time === treeTimes[selectedTree][9]){
+            treeDiv.style.backgroundColor='#e4f801';
+            treePercentage.innerHTML='80%';
         }
-        if(time === treeTimes[selectedTree[10]]){
-
+        if(time === treeTimes[selectedTree][10]){
+            treePercentage.innerHTML='90%';
         }
-        if(time === treeTimes[selectedTree[11]]){
-
+        if(time === treeTimes[selectedTree][11]){
+            treePercentage.innerHTML='95%';
         }
-        if(time === treeTimes[selectedTree[12]]){
-
+        if(time === treeTimes[selectedTree][12]){
+            treeDiv.style.backgroundColor='#50fc08';
+            treePercentage.innerHTML='100%';
+        }
+    }
+    if(fruitTrees){
+        if(time === fruitTreeStart+1){
+            fruitTreePercentage.innerHTML='1%';
+        }
+        if(time === fruitTreeStart+48){
+            fruitTreePercentage.innerHTML='5%';
+        }
+        if(time === fruitTreeStart+96){
+            fruitTreePercentage.innerHTML='10%';
+        }
+        if(time === fruitTreeStart+192){
+            fruitTreereeDiv.style.backgroundColor='#ff4100';
+            fruitTreePercentage.innerHTML='20%';
+        }
+        if(time === fruitTreeStart+288){
+            fruitTreePercentage.innerHTML='30%';
+        }
+        if(time === fruitTreeStart+384){
+            fruitTreereeDiv.style.backgroundColor='#ffba00';
+            fruitTreePercentage.innerHTML='40%';
+        }
+        if(time === fruitTreeStart+480){
+            fruitTreePercentage.innerHTML='50%';
+        }
+        if(time === fruitTreeStart+576){
+            fruitTreereeDiv.style.backgroundColor='#ffe800';
+            fruitTreePercentage.innerHTML='60%';
+        }
+        if(time === fruitTreeStart+672){
+            fruitTreePercentage.innerHTML='70%';
+        }
+        if(time === fruitTreeStart+798){
+            fruitTreereeDiv.style.backgroundColor='#e4f801';
+            fruitTreePercentage.innerHTML='80%';
+        }
+        if(time === fruitTreeStart+864){
+            fruitTreePercentage.innerHTML='90%';
+        }
+        if(time === fruitTreeStart+912){
+            fruitTreePercentage.innerHTML='95%';
+        }
+        if(time === fruitTreeStart+960){
+            fruitTreereeDiv.style.backgroundColor='#50fc08';
+            fruitTreePercentage.innerHTML='100%';
         }
     }
 }, 600);
@@ -288,10 +335,17 @@ birdButton.addEventListener('click',startBirds);
 function startTrees(){
     trees = true;
     treeStart = time;
-    treeDive.style.backgroundColor='rgb(255,0,0)';
+    treeDiv.style.backgroundColor='rgb(255,0,0)';
     treePercentage.innerHTML='0%';
 }
 treeButton.addEventListener('click',startTrees);
+function startFruitTrees() {
+    fruitTrees = true;
+    fruitTreeStart = time;
+    fruitTreeDiv.style.backgroundColor='rgb(255,0,0)';
+    treePercentage.innerHTML='0%';
+}
+fruitTreeButton.addEventListener('click',startFruitTrees);
 
 //making the timers appear/disappear
 //showhide function with checkbox div arg
@@ -302,24 +356,18 @@ function checkboxStatus(checkbox,div,dropdown){
         div.classList.remove('d-none');
         div.classList.add('d-flex');
         if(dropdown){
-            if(checkbox === treeCheckbox){
+            if(checkbox){
                 treeDropdownDiv.classList.remove('d-none');
                 treeDropdownDiv.classList.add('d-flex');
-            } else if(checkbox === fruitTreeCheckbox){
-                fruitTreeDropdownDiv.classList.remove('d-none');
-                fruitTreeDropdownDiv.classList.add('d-flex');
             }
         }
     } else if(!checkbox.checked) {
         div.classList.remove('d-flex');
         div.classList.add('d-none');
         if(dropdown){
-            if(checkbox === treeCheckbox){
+            if(checkbox){
                 treeDropdownDiv.classList.remove('d-flex');
                 treeDropdownDiv.classList.add('d-none');
-            } else if(checkbox === fruitTreeCheckbox){
-                fruitTreeDropdownDiv.classList.remove('d-flex');
-                fruitTreeDropdownDiv.classList.add('d-none');
             }
         }
     }
@@ -338,32 +386,8 @@ function treeDropdownSelect(num){
         treeDropDown.innerHTML = 'Yew';
     } else if(num==4) {
         treeDropDown.innerHTML = 'Magic';
-    } else if(num==5) {
-        treeDropDown.innerHTML = 'Redwood';
-    } else {
+    }  else {
         treeDropDown.innerHTML = 'Oak';
-    }
-}
-function fruitTreeDropdownSelect(num){
-    selectedFruitTree = num;
-    if(num==0){
-        fruitTreeDropDown.innerHTML = 'Apple';
-    } else if(num==1){
-        fruitTreeDropDown.innerHTML = 'Banana';
-    } else if(num==2){
-        fruitTreeDropDown.innerHTML = 'Orange';
-    } else if(num==3){
-        fruitTreeDropDown.innerHTML = 'Curry';
-    } else if(num==4){
-        fruitTreeDropDown.innerHTML = 'Pineapple';
-    } else if(num==5){
-        fruitTreeDropDown.innerHTML = 'Papaya';
-    } else if(num==6){
-        fruitTreeDropDown.innerHTML = 'Palm';
-    } else if(num==7){
-        fruitTreeDropDown.innerHTML = 'Dragonfruit';
-    } else {
-        fruitTreeDropDown.innerHTML = 'Apple';
     }
 }
 //onpageload function to check the previously set status of checkboxes and hide timers accordingly
