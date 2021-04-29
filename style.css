@@ -11,19 +11,6 @@ main {
   margin-top: 25px;
 }
 
-main .checkboxes {
-  color: white;
-  margin-bottom: 25px;
-}
-
-main .checkboxes input {
-  margin: 0 6px;
-}
-
-main .checkboxes label {
-  margin-bottom: 2px;
-}
-
 main #hoverLabelP {
   color: white;
 }
@@ -53,6 +40,10 @@ main .seaweed p, main .herbs p {
 
 main .trees p {
   padding-top: 3px;
+}
+
+main .popoutLink {
+  padding-top: 20px;
 }
 
 .timers button {
@@ -88,5 +79,19 @@ footer a.bootstrap {
 
 header a {
   color: #c4da00;
+}
+
+.checkboxes {
+  color: white;
+  margin-bottom: 25px;
+}
+
+.checkboxes input {
+  margin: 0 6px;
+}
+
+.checkboxes div label {
+  margin-bottom: 2px;
+  color: #dfdfdf;
 }
 /*# sourceMappingURL=style.css.map */

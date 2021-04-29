@@ -13,25 +13,35 @@
 
 <body onload='checkboxCheck()'>
   <header class='d-flex flex-column align-items-center'>
-    <h1>Tiny Timers</h1>
-    <p>Hit go to start, hit go to restart an active timer, or refresh to stop all timers c:</p>
+    <h1 class='d-none d-sm-flex'>Tiny Timers</h1>
+    <p class='d-none d-sm-flex'>Hit go to start, hit go to restart an active timer, or refresh to stop all timers c:</p>
   </header>
 
   <main class='d-flex flex-column align-items-center'>
-    <div class='checkboxes d-flex justify-content-center' id='checkboxes'>
-      <input type="checkbox" id='seaweedBox' name='seaweedBox' value='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv,false);' checked>
-      <label for='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv, false);'>Seaweed</label>
-      <input type="checkbox" id='birdBox' name='birdBox' value='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv,false);' checked>
-      <label for='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv);'>Birdhouses</label>
-      <input type="checkbox" id='herbBox' name='herbBox' value='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv,false);' checked>
-      <label for='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);'>Herbs</label>
-      <input type="checkbox" id='treeBox' name='treeBox' value='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);' checked>
-      <label for='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);'>Trees</label>
-      <input type="checkbox" id='fruitTreeBox' name='fruitTreeBox' value='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);' checked>
-      <label for='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);'>Fruit Trees</label>
+    <div class='checkboxes d-flex flex-column flex-sm-row align-items-center justify-content-md-center' id='checkboxes'>
+      <div>
+        <input type="checkbox" id='seaweedBox' name='seaweedBox' value='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv,false);' checked>
+        <label for='seaweedBox' onclick='checkboxStatus(seaweedCheckbox,seaweedDiv, false);'>Seaweed</label>
+      </div>
+      <div>
+        <input type="checkbox" id='birdBox' name='birdBox' value='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv,false);' checked>
+        <label for='birdBox' onclick='checkboxStatus(birdCheckbox,birdDiv);'>Birdhouses</label>
+      </div>
+      <div>
+        <input type="checkbox" id='herbBox' name='herbBox' value='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv,false);' checked>
+        <label for='herbBox' onclick='checkboxStatus(herbCheckbox,herbDiv);'>Herbs</label>
+      </div>
+      <div>
+        <input type="checkbox" id='treeBox' name='treeBox' value='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);' checked>
+        <label for='treeBox' onclick='checkboxStatus(treeCheckbox,treeDiv,true);'>Trees</label>
+      </div>
+      <div>
+        <input type="checkbox" id='fruitTreeBox' name='fruitTreeBox' value='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);' checked>
+        <label for='fruitTreeBox' onclick='checkboxStatus(fruitTreeCheckbox,fruitTreeDiv,true);'>Fruit Trees</label>
+      </div>
     </div>
     <div id='hoverLabelDiv'>
-      <p id='hoverLabelP'>444</p>
+      <p id='hoverLabelP'>-</p>
     </div>
     <div class='d-flex flex-row timers'>
       <div class='seaweed hoverDiv d-flex flex-column align-items-center startButton' onmouseenter='changeHoverLabel("Seaweed")' id='seaweed'>
@@ -75,6 +85,7 @@
         </div>
       </div>
     </div>
+    <a class='popoutLink d-sm-flex d-none' onclick="popUpWindow(`${window.location.href}`,'Example','250','250');" href='#'>Click here for a Tiny Popout Window</a>
   </main>
 
   <footer class='d-flex justify-content-center'>
