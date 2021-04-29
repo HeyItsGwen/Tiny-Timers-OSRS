@@ -54,11 +54,11 @@ let fruitTreeStart = 0;
 
 //array to store different tree growth times
 //[0]oak,[1]willow,[2]maple,[3]yew,[4]magic
-let treeTimes =[[[1],[8],[20],[40],[60],[80],[100],[120],[140],[160],[180],[190],[200]],
-                [[1],[14],[28],[56],[84],[112],[140],[168],[196],[224],[252],[266],[280]],
-                [[1],[16],[32],[64],[96],[128],[160],[192],[224],[256],[288],[304],[320]],
-                [[1],[20],[40],[80],[120],[160],[200],[240],[280],[320],[360],[380],[400]],
-                [[1],[24],[48],[96],[144],[192],[240],[288],[336],[384],[432],[456],[480]]];
+let treeTimes =[[1,8,20,40,60,80,100,120,140,160,180,190,200],
+                [1,14,28,56,84,112,140,168,196,224,252,266,280],
+                [1,16,32,64,96,128,160,192,224,256,288,304,320],
+                [1,20,40,80,120,160,200,240,280,320,360,380,400],
+                [1,24,48,96,144,192,240,288,336,384,432,456,480]];
 //variable storing the selected fruit tree
 let selectedTree = 0;
 let selectedFruitTree = 0;
@@ -211,47 +211,47 @@ const oneMinute = setInterval(function() {
     //trees check a variable that stores the selected tree, and then use that variable to access an array location to get time intervals
     //if time === treeArray[selectedTreeVariable][timeInterval]
     if(trees){
-        if(time === treeTimes[selectedTree][0]){
+        if(time === treeStart+treeTimes[selectedTree][0]){
             treePercentage.innerHTML='1%';
         }
-        if(time === treeTimes[selectedTree][1]){
+        if(time === treeStart+treeTimes[selectedTree][1]){
             treePercentage.innerHTML='5%';
         }
-        if(time === treeTimes[selectedTree][2]){
+        if(time === treeStart+treeTimes[selectedTree][2]){
             treePercentage.innerHTML='10%';
         }
-        if(time === treeTimes[selectedTree][3]){
+        if(time === treeStart+treeTimes[selectedTree][3]){
             treeDiv.style.backgroundColor='#ff4100';
             treePercentage.innerHTML='20%';
         }
-        if(time === treeTimes[selectedTree][4]){
+        if(time === treeStart+treeTimes[selectedTree][4]){
             treePercentage.innerHTML='30%';
         }
-        if(time === treeTimes[selectedTree][5]){
+        if(time === treeStart+treeTimes[selectedTree][5]){
             treeDiv.style.backgroundColor='#ffba00';
             treePercentage.innerHTML='40%';
         }
-        if(time === treeTimes[selectedTree][6]){
+        if(time === treeStart+treeTimes[selectedTree][6]){
             treePercentage.innerHTML='50%';
         }
-        if(time === treeTimes[selectedTree][7]){
+        if(time === treeStart+treeTimes[selectedTree][7]){
             treeDiv.style.backgroundColor='#ffe800';
             treePercentage.innerHTML='60%';
         }
-        if(time === treeTimes[selectedTree][8]){
+        if(time === treeStart+treeTimes[selectedTree][8]){
             treePercentage.innerHTML='70%';
         }
-        if(time === treeTimes[selectedTree][9]){
+        if(time === treeStart+treeTimes[selectedTree][9]){
             treeDiv.style.backgroundColor='#e4f801';
             treePercentage.innerHTML='80%';
         }
-        if(time === treeTimes[selectedTree][10]){
+        if(time === treeStart+treeTimes[selectedTree][10]){
             treePercentage.innerHTML='90%';
         }
-        if(time === treeTimes[selectedTree][11]){
+        if(time === treeStart+treeTimes[selectedTree][11]){
             treePercentage.innerHTML='95%';
         }
-        if(time === treeTimes[selectedTree][12]){
+        if(time === treeStart+treeTimes[selectedTree][12]){
             treeDiv.style.backgroundColor='#50fc08';
             treePercentage.innerHTML='100%';
         }
@@ -312,40 +312,80 @@ function changeHoverLabel(labelText){
 }
 
 function startSeaweed() {
-    seaweed = true;
-    seaweedStart = time;
     seaweedDiv.style.backgroundColor='rgb(255,0,0)';
-    seaweedPercentage.innerHTML='0%';
+    if(seaweed){
+        seaweed=false;
+        seaweedButton.innerHTML='Go';
+        seaweedPercentage.innerHTML='0%';
+        seaweedStart = 0;
+    }else if(!seaweed){
+        seaweed=true;
+        seaweedButton.innerHTML='End';
+        seaweedPercentage.innerHTML='0%';
+        seaweedStart = time;
+    }
 }
 seaweedButton.addEventListener('click',startSeaweed);
 
 function startHerbs() {
-    herbs = true;
-    herbStart = time;
     herbDiv.style.backgroundColor='rgb(255,0,0)';
-    herbPercentage.innerHTML='0%';
+    if(herbs){
+        herbs=false;
+        herbButton.innerHTML='Go';
+        herbPercentage.innerHTML='0%';
+        herbStart = 0;
+    }else if(!herbs){
+        herbs=true;
+        herbButton.innerHTML='End';
+        herbPercentage.innerHTML='0%';
+        herbStart = time;
+    }
 }
 herbButton.addEventListener('click',startHerbs);
 
 function startBirds(){
-    birds = true;
-    birdStart = time;
     birdDiv.style.backgroundColor='rgb(255,0,0)';
-    birdPercentage.innerHTML='0%'
+    if(birds){
+        birds=false;
+        birdButton.innerHTML='Go';
+        birdPercentage.innerHTML='0%';
+        birdStart = 0;
+    }else if(!birds){
+        birds=true;
+        birdButton.innerHTML='End';
+        birdPercentage.innerHTML='0%';
+        birdStart = time;
+    }
 }
 birdButton.addEventListener('click',startBirds);
 function startTrees(){
-    trees = true;
-    treeStart = time;
     treeDiv.style.backgroundColor='rgb(255,0,0)';
-    treePercentage.innerHTML='0%';
+    if(trees){
+        trees=false;
+        treeButton.innerHTML='Go';
+        treePercentage.innerHTML='0%';
+        treeStart = 0;
+    }else if(!trees){
+        trees=true;
+        treeButton.innerHTML='End';
+        treePercentage.innerHTML='0%';
+        treeStart = time;
+    }
 }
 treeButton.addEventListener('click',startTrees);
 function startFruitTrees() {
-    fruitTrees = true;
-    fruitTreeStart = time;
     fruitTreeDiv.style.backgroundColor='rgb(255,0,0)';
-    treePercentage.innerHTML='0%';
+    if(fruitTrees){
+        fruitTrees=false;
+        fruitTreeButton.innerHTML='Go';
+        fruitTreePercentage.innerHTML='0%';
+        fruitTreeStart = 0;
+    }else if(!fruitTrees){
+        fruitTrees=true;
+        fruitTreeButton.innerHTML='End';
+        fruitTreePercentage.innerHTML='0%';
+        fruitTreeStart = time;
+    }
 }
 fruitTreeButton.addEventListener('click',startFruitTrees);
 
