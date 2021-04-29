@@ -7,17 +7,25 @@ let fruitTreeDiv = document.getElementById('fruitTrees');
 
 //dropdown divs
 let treeDropdownDiv = document.getElementById('treeDropdownDiv');
-let fruitTreeDropdownDiv = document.getElementById('fruitTreeDropdownDiv')
+let fruitTreeDropdownDiv = document.getElementById('fruitTreeDropdownDiv');
+
+//dropdown buttons to change text
+let treeDropDown = document.getElementById('treeDropdown');
+let fruitTreeDropDown = document.getElementById('fruitTreeDropdown');
 
 //get the start buttons from the dom
 let seaweedButton = document.getElementById('seaweedButton');
 let herbButton = document.getElementById('herbButton');
 let birdButton = document.getElementById('birdButton');
+let treeButton = document.getElementById('treeButton');
+let fruitTreeButton = document.getElementById('fruitTreeButton');
 
 //get the percentage elements
 let seaweedPercentage = document.getElementById('seaweedPercent');
 let herbPercentage = document.getElementById('herbPercent');
 let birdPercentage = document.getElementById('birdPercent');
+let treePercentage = document.getElementById('treePercent');
+let fruitTreePercentage = document.getElementById('fruitTreePercent');
 
 //get the checkbox dom elements
 let seaweedCheckbox = document.getElementById('seaweedBox');
@@ -31,16 +39,38 @@ let time = 0;
 let seaweed = false;
 let herbs = false;
 let birds = false;
+let trees = false;
+let fruitTrees = false;
 
 //set variables for when in the global time the buttons were pressed
 let seaweedStart = 0;
 let herbStart = 0;
 let birdStart = 0;
+let treeStart = 0;
+let fruitTreeStart = 0;
 
+//array to store tree growth times
+let treeTimes =[[],
+                [],
+                [],
+                [],
+                [],
+                []];
+let selectedTree = 0;
+
+let fruitTreeTimes=[[],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []];
+let selectedFruitTree = 0;
 /*
 
 FIGURE OUT TREEEEES
 dropdown for tree type to set how long it lasts
+
+2nd js file for tree/fruit tree times array?
 
 */
 
@@ -143,13 +173,6 @@ const oneMinute = setInterval(function() {
             herbPercentage.innerHTML='100%';
         }
     }
-    /*
-    '#ff4100'
-    '#ffba00'
-    '#ffe800'
-    '#e4f801'
-    '#50fc08'
-    */
     if(birds){
         if(time === birdStart+1){
             birdPercentage.innerHTML='1%';
@@ -196,6 +219,47 @@ const oneMinute = setInterval(function() {
             birdDiv.style.backgroundColor='#50fc08';
         }
     }
+    if(trees){
+        if(time === treeTimes[selectedTree[0]]){
+
+        }
+        if(time === treeTimes[selectedTree[1]]){
+
+        }
+        if(time === treeTimes[selectedTree[2]]){
+
+        }
+        if(time === treeTimes[selectedTree[3]]){
+
+        }
+        if(time === treeTimes[selectedTree[4]]){
+
+        }
+        if(time === treeTimes[selectedTree[5]]){
+
+        }
+        if(time === treeTimes[selectedTree[6]]){
+
+        }
+        if(time === treeTimes[selectedTree[7]]){
+
+        }
+        if(time === treeTimes[selectedTree[8]]){
+
+        }
+        if(time === treeTimes[selectedTree[9]]){
+
+        }
+        if(time === treeTimes[selectedTree[10]]){
+
+        }
+        if(time === treeTimes[selectedTree[11]]){
+
+        }
+        if(time === treeTimes[selectedTree[12]]){
+
+        }
+    }
 }, 600);
 
 function startSeaweed() {
@@ -221,6 +285,13 @@ function startBirds(){
     birdPercentage.innerHTML='0%'
 }
 birdButton.addEventListener('click',startBirds);
+function startTrees(){
+    trees = true;
+    treeStart = time;
+    treeDive.style.backgroundColor='rgb(255,0,0)';
+    treePercentage.innerHTML='0%';
+}
+treeButton.addEventListener('click',startTrees);
 
 //making the timers appear/disappear
 //showhide function with checkbox div arg
@@ -254,8 +325,47 @@ function checkboxStatus(checkbox,div,dropdown){
     }
 }
 //function for changing the inner text of the dropdown button 
-function treeDropdownSelect(tree){}
-function fruitTreeDroodownSelect(tree){}
+function treeDropdownSelect(num){
+    //switch that finds what (tree) is, then changed the text of the dropdown and does something to change what the timer does
+    selectedTree = num;
+    if(num==0){
+        treeDropDown.innerHTML = 'Oak';
+    } else if(num==1) {
+        treeDropDown.innerHTML = 'Willow';
+    } else if(num==2) {
+        treeDropDown.innerHTML = 'Maple';
+    } else if(num==3) {
+        treeDropDown.innerHTML = 'Yew';
+    } else if(num==4) {
+        treeDropDown.innerHTML = 'Magic';
+    } else if(num==5) {
+        treeDropDown.innerHTML = 'Redwood';
+    } else {
+        treeDropDown.innerHTML = 'Oak';
+    }
+}
+function fruitTreeDropdownSelect(num){
+    selectedFruitTree = num;
+    if(num==0){
+        fruitTreeDropDown.innerHTML = 'Apple';
+    } else if(num==1){
+        fruitTreeDropDown.innerHTML = 'Banana';
+    } else if(num==2){
+        fruitTreeDropDown.innerHTML = 'Orange';
+    } else if(num==3){
+        fruitTreeDropDown.innerHTML = 'Curry';
+    } else if(num==4){
+        fruitTreeDropDown.innerHTML = 'Pineapple';
+    } else if(num==5){
+        fruitTreeDropDown.innerHTML = 'Papaya';
+    } else if(num==6){
+        fruitTreeDropDown.innerHTML = 'Palm';
+    } else if(num==7){
+        fruitTreeDropDown.innerHTML = 'Dragonfruit';
+    } else {
+        fruitTreeDropDown.innerHTML = 'Apple';
+    }
+}
 //onpageload function to check the previously set status of checkboxes and hide timers accordingly
 function checkboxCheck(){
     checkboxStatus(seaweedCheckbox,seaweedDiv,false);
