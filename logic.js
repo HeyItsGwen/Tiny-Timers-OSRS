@@ -302,7 +302,7 @@ const oneMinute = setInterval(function() {
             fruitTreePercentage.innerHTML='100%';
         }
     }
-}, 60000);
+}, 600);
 
 function clearHoverLabel() {hoverLabel.innerHTML = '-'};
 document.querySelectorAll('.hoverDiv').forEach(divs => {divs.addEventListener('mouseleave',clearHoverLabel)});
