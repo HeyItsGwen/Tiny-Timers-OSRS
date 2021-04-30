@@ -15,8 +15,8 @@
  ![Tiny Timer Popout Mode](/images/tinyTimersPopout.png)
 
  This popout mode version can be made small enough that, when you hover over the browser icon in your taskbar, you can see colors/percentages of timers without having to focus the window.
- 
- ![Tiny Timers in the Toolbar](/images/tinyTimersToolbar.png)
+
+ ![Tiny Timers in the Toolbar](/images/tinyTimersToolbar1.png)
 
 ## About
  Tiny timers was made with vanilla javascript, [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/) and sass for styling and responsive design. It works by running on a 1 minute loop while the site is loaded, meaning that if you refresh or leave the page the timer progress will be lost, but also that it keeps processing power low, doesn't need to access servers, and can be used entirely offline once loaded. 
