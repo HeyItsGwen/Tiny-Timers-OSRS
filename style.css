@@ -82,6 +82,11 @@ footer a.bootstrap {
   color: #7952b3;
 }
 
+footer .footerP {
+  padding: 0;
+  margin-top: -15px;
+}
+
 header a {
   color: #c4da00;
 }
