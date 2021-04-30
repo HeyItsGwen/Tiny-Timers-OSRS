@@ -7,12 +7,15 @@
  To start a timer, pick the one you'd like, and hit go! If you want to end the timer, hit end!
 
  You can also choose which timers you'd like to be displayed by using the checkboxes above them.
- ![Tiny Timer Checkboxes](/images/tinyTimersCheckboxes)
+
+ ![Tiny Timer Checkboxes](/images/tinyTimersCheckboxes.png)
 
  If you want a smaller screen, hit the popout link underneath the timers, and a much smaller browser window will appear.
+
  ![Tiny Timer Popout Mode](/images/tinyTimersPopout.png)
 
  This popout mode version can be made small enough that, when you hover over the browser icon in your taskbar, you can see colors/percentages of timers without having to focus the window.
+ 
  ![Tiny Timers in the Toolbar](/images/tinyTimersToolbar.png)
 
 ## About
